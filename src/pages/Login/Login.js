@@ -1,12 +1,16 @@
 import React from "react";
-import { Form, Input, Button, Checkbox, Layout } from "antd";
+import { Form, Input, Button, Layout } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import "./Login.less";
 import img1 from "../../assets/imgs/logo.png";
+import api from "../../api/index";
+// ";
+import md5 from "md5";
 const { Header, Content } = Layout;
 class Login extends React.Component {
-  onFinish(val) {
-    console.log(val);
+  async onFinish(val) {
+    val.password = md5(val.password);
+    let res = await api.login(val);
   }
   render() {
     return (
@@ -23,15 +27,15 @@ class Login extends React.Component {
               initialValues={{ remember: true }}
             >
               <Form.Item
-                name="username"
+                name="email"
                 rules={[
                   {
                     required: true,
-                    message: "请输入您的账号!",
+                    message: "请输入您的邮箱!",
                   },
                 ]}
               >
-                <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="账号"></Input>
+                <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="映兔邮箱"></Input>
               </Form.Item>
               <Form.Item
                 name="password"
@@ -43,12 +47,6 @@ class Login extends React.Component {
                 ]}
               >
                 <Input prefix={<LockOutlined className="site-form-item-icon" />} type="password" placeholder="密码" />
-              </Form.Item>
-
-              <Form.Item>
-                <Form.Item name="remember" valuePropName="checked" noStyle>
-                  <Checkbox>记住我</Checkbox>
-                </Form.Item>
               </Form.Item>
               <Form.Item>
                 <Button type="primary" htmlType="submit" className="login-form-button">

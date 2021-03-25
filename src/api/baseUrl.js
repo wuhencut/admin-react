@@ -2,7 +2,7 @@
 import env from "./env";
 // 测试环境
 let baseUrl = [
-  "http//dev.admin.test.collectivedynamic.com:30000",
+  "http://dev.admin.test.collectivedynamic.com:30000",
   "http://dev.passport.test.collectivedynamic.com:30000",
 ];
 if (env === "master") {
@@ -32,9 +32,11 @@ if (env === "master") {
 
     default:
       baseUrl = [
-        "http//dev.admin.test.collectivedynamic.com:30000",
+        "http://dev.admin.test.collectivedynamic.com:30000",
         "http://dev.passport.test.collectivedynamic.com:30000",
       ];
       break;
   }
 }
+
+export default baseUrl;

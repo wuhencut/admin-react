@@ -4,6 +4,7 @@ import axios from "axios";
 import { message } from "antd";
 import getUserInfo from "./getUserInfo";
 import baseUrl from "./baseUrl";
+import initReq from "./initReq";
 axios.interceptors.request.use(
   (config) => {
     return config;
@@ -43,14 +44,15 @@ axios.interceptors.response.use(
 let userInfo;
 let post = (path, data) => {
   userInfo = getUserInfo();
-  let url = /^\/v1|^\/passport/.test(path) ? baseUrl[0] : baseUrl[1] + path;
+  let url = (/^\/v1|\/passport/.test(path) ? baseUrl[1] : baseUrl[0]) + path;
   let req = {
     source: "web",
     sid: userInfo.sid ? userInfo.sid : "",
     user_id: userInfo.user_id ? userInfo.user_id : "",
     data: data,
   };
-  return axios.post(url, req);
+  // console.log(url);
+  return axios.post(url, initReq(req));
 };
 export default {
   /**************账户相关 */
