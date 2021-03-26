@@ -1,13 +1,8 @@
-import Index from "./Index/Index";
-import Login from "./Login/Login";
-import CompanyAuth from "./CompanyAuth/index";
-import PersonalPool from "./PersonalPool/index";
+import Index from "../Index/Index";
+import Login from "../Login/Login";
+import CompanyAuth from "../CompanyAuth/index";
+import PersonalPool from "../PersonalPool/index";
 let routes = [
-  {
-    path: "/",
-    name: "index",
-    component: Index,
-  },
   {
     path: "/login",
     name: "login",

@@ -2,7 +2,7 @@
 import { Redirect, Route } from "react-router-dom";
 import React from "react";
 import getUserInfo from "../../api/getUserInfo";
-import routerConfig from "../routerConfig";
+import routerConfig from "./routerConfig";
 class AuthRoute extends React.Component {
   render() {
     //  路由参数          路由地址
@@ -10,7 +10,7 @@ class AuthRoute extends React.Component {
     const { pathname } = location; // 获取要去的路由地址
     const authed = getUserInfo().sid > 0 ? true : false;
     const targetRouterConfig = routerConfig.find((item) => {
-      console.log(item.path, pathname);
+      // console.log(item.path, pathname);
       return item.path === pathname;
     });
     if (!authed) {
@@ -18,7 +18,10 @@ class AuthRoute extends React.Component {
       return <Redirect to="/login" />;
     } else {
       if (targetRouterConfig) {
+        console.log(targetRouterConfig);
         return <Route path={pathname} component={targetRouterConfig.component} />;
+      } else {
+        return <Redirect to="/index" />;
       }
     }
   }

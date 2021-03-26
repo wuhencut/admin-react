@@ -8,7 +8,6 @@ import { message, Layout, Popover, Menu } from "antd";
 import authList from "../../authList.json";
 import { Link, Switch } from "react-router-dom";
 import AuthRoute from "../AuthRoute/AuthRoute";
-import routerConfig from "../routerConfig";
 const { Header, Content } = Layout;
 const { SubMenu } = Menu;
 let user = getUserInfo();
