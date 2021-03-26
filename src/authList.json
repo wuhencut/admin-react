@@ -1,0 +1,659 @@
+{
+  "list": [{
+    "id": "id59",
+    "label": "客户管理",
+    "children": [{
+      "id": "id1",
+      "label": "企业认证",
+      "path": "companyAuth",
+      "children": [{
+        "id": "id81",
+        "label": "审核通过、审核拒绝"
+      }, {
+        "id": "id82",
+        "label": "保存"
+      }]
+    }, {
+      "id": "1601025670",
+      "label": "个人池管理",
+      "path": "personalPool",
+      "children": [{
+        "id": "1601263102",
+        "label": "主管(查看其它BD数据，无限制除冻结)"
+      }, {
+        "id": "1606897835",
+        "label": "FT客户助手"
+      }, {
+        "id": "1603863830",
+        "label": "拾取按钮"
+      }, {
+        "id": "1601275307",
+        "label": "详情 保存 按钮"
+      }, {
+        "id": "1601275334",
+        "label": "冻结、解冻按钮"
+      }, {
+        "id": "1601275359",
+        "label": "备注"
+      }, {
+        "id": "1601373148",
+        "label": "新增授权"
+      }]
+    }, {
+      "id": "1601025757",
+      "label": "公海管理",
+      "path": "publicPool",
+      "children": [{
+        "id": "1601372533",
+        "label": "主管(查看其它BD数据，无限制除冻结)"
+      }, {
+        "id": "1603862488",
+        "label": "转移按钮"
+      }, {
+        "id": "1601373231",
+        "label": "详情 保存 按钮"
+      }, {
+        "id": "1601373242",
+        "label": "冻结、解冻按钮"
+      }, {
+        "id": "1601373252",
+        "label": "备注"
+      }, {
+        "id": "1601373261",
+        "label": "新增授权"
+      }, {
+        "id": "1601373275",
+        "label": "新增认证"
+      }]
+    }, {
+      "id": "id2",
+      "label": "品牌授权",
+      "path": "brandAuth",
+      "children": [{
+        "id": "id83",
+        "label": "BD负责人筛选"
+      }, {
+        "id": "id84",
+        "label": "审核通过、审核拒绝"
+      }, {
+        "id": "id85",
+        "label": "保存"
+      }]
+    }, {
+      "id": "1604371166",
+      "label": "商户管理",
+      "path": "sponsorManage",
+      "children": [{
+        "id": "1604372133",
+        "label": "提交保存"
+      }]
+    }]
+  }, {
+    "id": "id60",
+    "label": "账户管理",
+    "children": [{
+      "id": "id3",
+      "label": "博主申请",
+      "path": "cpApply",
+      "children": [{
+        "id": "id73",
+        "label": "拒绝"
+      }, {
+        "id": "id75",
+        "label": "通过"
+      }, {
+        "id": "id86",
+        "label": "保存"
+      }]
+    }, {
+      "id": "id4",
+      "label": "博主列表",
+      "path": "cpList",
+      "children": [{
+        "id": "id87",
+        "label": "冻结账户、解冻账户"
+      }, {
+        "id": "id88",
+        "label": "保存"
+      }]
+    }, {
+      "id": "id49",
+      "label": "用户列表",
+      "path": "registeCpList",
+      "children": [{
+        "id": "id89",
+        "label": "强行解绑"
+      }]
+    }, {
+      "id": "id51",
+      "label": "博主处罚",
+      "path": "cpPunish",
+      "children": [{
+        "id": "id94",
+        "label": "撤销、创建处罚"
+      }]
+    }, {
+      "id": "id52",
+      "label": "关联账号分析",
+      "path": "cpContact",
+      "children": [{
+        "id": "id95",
+        "label": "关联"
+      }, {
+        "id": "id96",
+        "label": "撤销"
+      }]
+    }, {
+      "id": "1603850644",
+      "label": "联盟博主列表",
+      "path": "leagueBlogger",
+      "children": [{
+        "id": "1611661573",
+        "label": "创建战队"
+      },{
+        "id": "1611661621",
+        "label": "战队改名"
+      },{
+        "id": "1611661645",
+        "label": "成员列表"
+      },{
+        "id": "1611661729",
+        "label": "删除"
+        },
+        {
+        "id": "1611661903",
+        "label": "修改队长"
+        }]
+    }]
+  }, {
+    "id": "id61",
+    "label": "业务管理",
+    "children": [{
+      "id": "id6",
+      "label": "品牌管理",
+      "path": "brandList",
+      "children": [{
+        "id": "id102",
+        "label": "编辑品牌"
+      }, {
+        "id": "id103",
+        "label": "删除品牌"
+      }, {
+        "id": "id104",
+        "label": "新增品牌"
+      }]
+    }, {
+      "id": "id8",
+      "label": "用户标签",
+      "path": "tagList",
+      "children": [{
+        "id": "1603870903",
+        "label": "可编辑,删除,添加标签"
+      }]
+    }, {
+      "id": "id10",
+      "label": "押金管理",
+      "path": "depositList",
+      "children": [{
+        "id": "id105",
+        "label": "履约、违约按钮"
+      }]
+    }, {
+      "id": "id11",
+      "label": "初审管理",
+      "path": "preAudit"
+    }, {
+      "id": "id12",
+      "label": "数据管理",
+      "path": "dataList"
+    }, {
+      "id": "id13",
+      "label": "授权管理",
+      "path": "erpList"
+    }]
+  },{
+    "id":"id74",
+    "label":"联盟定制管理",
+    "children":[{
+      "id":"id1611577004",
+      "label":"联盟战队",
+      "path":"leagueTeamList",
+      "children":[{
+        "id": "id1611662664",
+        "label": "创建战队"
+      },{
+        "id": "id1611662696",
+        "label": "战队改名"
+      },{
+        "id": "id1611662732",
+        "label": "成员列表"
+      },{
+        "id": "id1611663165",
+        "label": "修改队长"
+      },{
+        "id": "id1611662755",
+        "label": "删除战队"
+      }]
+    },{
+      "id":"id1611577700",
+      "label":"定制博主管理",
+      "path":"customBloggerList",
+      "children":[{
+        "id":"id1611663495",
+        "label":"查看"
+      },{
+        "id":"id1611663514",
+        "label":"添加"
+      },{
+        "id":"id1611663555",
+        "label":"关闭权限/重启权限"
+      }]
+    },
+      {"id":"id1611577714",
+        "label":"联盟平台价管理",
+        "path":"sourcePrice",
+        "children":[{
+          "id":"id1611663888",
+          "label":"查看" 
+        },
+        {
+          "id":"id1611663900",
+          "label":"添加" 
+        },
+        {
+          "id":"id1611663909",
+          "label":"批量导入" 
+        },
+        {
+          "id":"id1611663916",
+          "label":"修改" 
+        }
+      ]
+      },
+      {"id":"id1611577727",
+      "label":"战队积分统计",
+      "path":"teamPoints",
+      "children":[{
+        "id":"id1611713705",
+        "label":"增加积分" 
+      },{
+        "id":"id1611713735",
+        "label":"删除" 
+      }]
+    }
+    ]
+  }, {
+    "id": "id62",
+    "label": "商城管理",
+    "children": [{
+      "id": "id14",
+      "label": "商品管理",
+      "path": "goodsManage",
+      "children": [{
+        "id": "id106",
+        "label": "查看"
+      }, {
+        "id": "id107",
+        "label": "置顶"
+      }]
+    }, {
+      "id": "id15",
+      "label": "热门单品",
+      "path": "hotGoods",
+      "children": [{
+        "id": "id108",
+        "label": "查看"
+      }, {
+        "id": "id109",
+        "label": "新增单品"
+      }, {
+        "id": "id110",
+        "label": "编辑"
+      }]
+    },{
+      "id": "1608014161",
+      "label": "优惠券",
+      "path": "couponList",
+      "children": [{
+        "id": "1608014199",
+        "label": "充值"
+      }]
+    },
+     {
+      "id": "id132",
+      "label": "前台类目",
+      "path": "categoryFront"
+    }, {
+      "id": "id133",
+      "label": "后台类目",
+      "path": "category"
+    }]
+  }, {
+    "id": "id63",
+    "label": "社群管理",
+    "children": [{
+      "id": "id53",
+      "label": "BA管理",
+      "path": "baManage",
+      "children": [{
+        "id": "id97",
+        "label": "新增"
+      }, {
+        "id": "id98",
+        "label": "注销、恢复"
+      }]
+    }, {
+      "id": "id54",
+      "label": "分享记录管理",
+      "path": "shareList"
+    }, {
+      "id": "id55",
+      "label": "任务分统计",
+      "path": "scoreList",
+      "children": [{
+        "id": "id114",
+        "label": "查看详情"
+      }]
+    }]
+  }, {
+    "id": "id64",
+    "label": "活动管理",
+    "children": [{
+      "id": "id17",
+      "label": "活动列表",
+      "path": "activitySchedu",
+      "children": [{
+        "id": "id99",
+        "label": "通过、拒绝"
+      }, {
+        "id": "id100",
+        "label": "详情保存"
+      }, {
+        "id": "id115",
+        "label": "预览、详情按钮"
+      }]
+    }, {
+      "id": "id18",
+      "label": "活动评分",
+      "path": "activityList"
+    }, {
+      "id": "id50",
+      "label": "置换活动次数",
+      "path": "addReplaceNum",
+      "children": [{
+        "id": "id101",
+        "label": "增加次数"
+      }, {
+        "id": "id116",
+        "label": "查看详情"
+      }]
+    }, {
+      "id": "id57",
+      "label": "活动专场",
+      "path": "specialEvent"
+    },{
+      "id":"id1611630884",
+      "label":"定制活动审核",
+      "path":"customizedActivityCheck",
+      "children":[{
+      "id":"id1611715024",
+      "label":"查看"
+      },{
+        "id":"id1611715033",
+        "label":"保存"
+      },{
+        "id":"id1611715042",
+        "label":"通过活动/拒绝活动"
+      },{
+        "id":"id1611715105",
+        "label":"关闭活动"
+      }]
+    }]
+  }, {
+    "id": "id65",
+    "label": "售后管理",
+    "children": [{
+      "id": "id19",
+      "label": "客户问题",
+      "path": "customerIssues",
+      "children": [{
+        "id": "id131",
+        "label": "协商记录 发送 按钮"
+      }]
+    }, {
+      "id": "id20",
+      "label": "退货退款",
+      "path": "refundIssues"
+    }, {
+      "id": "id21",
+      "label": "测评修改",
+      "path": "reviewIssues",
+      "children": [{
+        "id": "id117",
+        "label": "通过、拒绝按钮"
+      }, {
+        "id": "id118",
+        "label": "订单详情"
+      }, {
+        "id": "id119",
+        "label": "协商记录 发送 按钮"
+      }]
+    }, {
+      "id": "id22",
+      "label": "保障罚款",
+      "path": "guaranteeFines",
+      "children": [{
+        "id": "id120",
+        "label": "关闭罚款"
+      }, {
+        "id": "id121",
+        "label": "导出表格"
+      }]
+    }]
+  }, {
+    "id": "id66",
+    "label": "订单管理",
+    "children": [{
+      "id": "id23",
+      "label": "试用探店",
+      "path": "orderList",
+      "children": [{
+        "id": "id122",
+        "label": "关闭订单"
+      }, {
+        "id": "id123",
+        "label": "导出表格"
+      }, {
+        "id": "id124",
+        "label": "协商记录 发送 按钮"
+      }]
+    }, {
+      "id": "id24",
+      "label": "商品购买",
+      "path": "goodsList",
+      "children": [{
+        "id": "id125",
+        "label": "关闭订单"
+      }, {
+        "id": "id126",
+        "label": "导出表格"
+      }]
+    },{
+      "id": "id1611633086",
+      "label": "联盟定制订单",
+      "path": "leagueOrder",
+      "children":[{
+        "id": "id1611715814",
+        "label": "查看详情"
+      },{
+        "id": "id1611715822",
+        "label": "完成审稿/确认测评"
+      },{
+        "id": "id1611715856",
+        "label": "关闭订单"
+      },{
+        "id": "id1611726005",
+        "label": "协商记录 发送 按钮"
+      }]
+    }]
+  }, {
+    "id": "id67",
+    "label": "结算管理",
+    "children": [{
+      "id": "id25",
+      "label": "赏金发放",
+      "path": "activityReward"
+    }, {
+      "id": "id26",
+      "label": "返利发放",
+      "path": "feedbackReward",
+      "children": [{
+        "id": "id127",
+        "label": "审核发放"
+      }]
+    }, {
+      "id": "id27",
+      "label": "悬赏审核",
+      "path": "rewardSettle",
+      "children": [{
+        "id": "id128",
+        "label": "详情 保存 按钮"
+      }, {
+        "id": "id129",
+        "label": "协商记录 发送 按钮"
+      }]
+    }]
+  }, {
+    "id": "id68",
+    "label": "物流管理",
+    "children": [{
+      "id": "id28",
+      "label": "粉丝物流",
+      "path": "expressFansList",
+      "children": [{
+        "id": "id130",
+        "label": "关闭"
+      }]
+    }]
+  }, {
+    "id": "id69",
+    "label": "配置管理",
+    "children": [{
+      "id": "id56",
+      "label": "顶部导航",
+      "path": "appTopNav"
+    }, {
+      "id": "1608017438",
+      "label": "运营计划",
+      "path": "operateSchedule"
+    },{
+      "id": "id58",
+      "label": "私享聚合配置",
+      "path": "campaignAggregation"
+    }, {
+      "id": "id29",
+      "label": "私享轮播",
+      "path": "privateBanner"
+    }, {
+      "id": "id30",
+      "label": "星选轮播",
+      "path": "starBanner"
+    }, {
+      "id": "id31",
+      "label": "App开屏",
+      "path": "appOpen"
+    }, {
+      "id": "id32",
+      "label": "App推送",
+      "path": "appNotice"
+    }, {
+      "id": "id33",
+      "label": "H5编辑",
+      "path": "webEditor"
+    }, {
+      "id": "id34",
+      "label": "商家消息",
+      "path": "notice"
+    }, {
+      "id": "id35",
+      "label": "配置管理",
+      "path": "configList"
+    }, {
+      "id": "id36",
+      "label": "配置说明",
+      "path": "configExplain"
+    }]
+  }, {
+    "id": "id70",
+    "label": "工具管理",
+    "children": [{
+      "id": "id37",
+      "label": "重置操作",
+      "path": "adminReset"
+    }, {
+      "id": "id38",
+      "label": "追杀博主",
+      "path": "cpKill"
+    }, {
+      "id": "id39",
+      "label": "加减信用",
+      "path": "creditModify"
+    }]
+  }, {
+    "id": "id71",
+    "label": "财务管理",
+    "children": [{
+      "id": "id40",
+      "label": "商户充值",
+      "path": "rechargeOrder",
+      "children": [{
+        "id": "id76",
+        "label": "新建订单"
+      }]
+    }, {
+      "id": "id41",
+      "label": "商户充值退款",
+      "path": "spRechargeWithdraw"
+    }, {
+      "id": "id42",
+      "label": "商户收入提现",
+      "path": "spIncomeWithdraw"
+    }, {
+      "id": "id43",
+      "label": "博主提现",
+      "path": "bloggerWithdraw"
+    }, {
+      "id": "id44",
+      "label": "用户发薪",
+      "path": "payUser"
+    }, {
+      "id": "id45",
+      "label": "发放映币",
+      "path": "provideIngCoin"
+    }, {
+      "id": "1603850952",
+      "label": "云账户管理",
+      "path": "cloudManage"
+    }, {
+      "id": "id46",
+      "label": "退税审核",
+      "path": "taxRefund"
+    }, {
+      "id": "1601448464",
+      "label": "销售绩效考核",
+      "path": "bdKpi"
+    }]
+  }, {
+    "id": "id72",
+    "label": "账号管理",
+    "children": [{
+      "id": "id47",
+      "label": "人员管理",
+      "path": "adminList"
+    }, {
+      "id": "id48",
+      "label": "角色管理",
+      "path": "roleList"
+    }]
+  }]
+}
