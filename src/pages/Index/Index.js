@@ -40,9 +40,17 @@ class Index extends React.Component {
             <div className={style.img}>
               <img src={logo} alt="" />
             </div>
-            <div className={style.img}>
-              <Popover trigger="click" content={<Link to="/login">退出登录</Link>}>
-                <Button>ClickMe</Button>
+            <div className={style.right}>
+              <Popover
+                trigger="click"
+                content={
+                  <div>
+                    <Link to="/login">退出登录</Link> <br />
+                    <Link to="/login">修改密码</Link>
+                  </div>
+                }
+              >
+                <div className={style["user-info"]}>{user.email}</div>
               </Popover>
             </div>
           </Header>
