@@ -1,4 +1,19 @@
 .page {
+  .content {
+    .main {
+      display: flex;
+      height: 100vh;
+      > .left{
+        width: 150px;
+        .menu {
+          height: 100vh;
+        }
+      }
+      > .right{
+        flex: 1;
+      }
+    }
+  }
   .header {
     text-align: left;
     display: flex;
@@ -11,6 +26,7 @@
     .right {
       > .user-info{
         color: #fff;
+        cursor: pointer;
       }
     }
   }

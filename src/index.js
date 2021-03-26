@@ -1,14 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+import Index from "./pages/Index/Index";
 import reportWebVitals from "./reportWebVitals";
 import { HashRouter } from "react-router-dom";
 import "antd/dist/antd.css";
 
 ReactDOM.render(
   <HashRouter>
-    <App />
+    <Index />
   </HashRouter>,
   document.getElementById("root")
 );

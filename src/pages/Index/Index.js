@@ -3,11 +3,41 @@ import style from "./Index.module.less";
 import api from "../../api/index";
 import logo from "../../assets/imgs/logo.png";
 import getUserInfo from "../../api/getUserInfo";
-import { message, Layout, Popover, Button } from "antd";
+import { message, Layout, Popover, Menu } from "antd";
+// import AuthRoute from "../AuthRoute/AuthRoute";
+import authList from "../../authList.json";
+import { Link, Switch } from "react-router-dom";
 import AuthRoute from "../AuthRoute/AuthRoute";
-import { Link } from "react-router-dom";
+import routerConfig from "../routerConfig";
 const { Header, Content } = Layout;
+const { SubMenu } = Menu;
 let user = getUserInfo();
+const MenuItems = (children) => {
+  return children.map((item) => (
+    <Menu.Item key={item.id}>
+      <Link to={item.path}>{item.label}</Link>
+    </Menu.Item>
+  ));
+};
+const SubMenuItem = authList.map((item) => (
+  <SubMenu key={item.id} title={item.label}>
+    {MenuItems(item.children)}
+  </SubMenu>
+));
+// const SubMenuItem = function deep(list) {
+//   return list.map((item) => {
+//     if (item.children) {
+//       console.log(item);
+//       return (
+//         <SubMenu key={item.id} title={item.label}>
+//           {deep(item.children)}
+//         </SubMenu>
+//       );
+//     }
+//     return <Menu.Item key={item.id}>{item.label}</Menu.Item>;
+//   });
+// };
+
 class Index extends React.Component {
   constructor(props) {
     super(props);
@@ -25,7 +55,6 @@ class Index extends React.Component {
       });
       if (res.error_code === 0) {
         this.setState({ roleList: JSON.parse(res.data.list[0].page_level_permission) });
-        console.log(this.state.roleList);
       }
     } else {
       message.error("您还没有被分配权限");
@@ -54,6 +83,20 @@ class Index extends React.Component {
               </Popover>
             </div>
           </Header>
+          <Content className={style.content}>
+            <div className={style.main}>
+              <div className={style.left}>
+                <Menu className={style.menu} mode="inline" theme="dark">
+                  {SubMenuItem}
+                </Menu>
+              </div>
+              <div className={style.right}>
+                <Switch>
+                  <AuthRoute routerConfig={routerConfig}></AuthRoute>
+                </Switch>
+              </div>
+            </div>
+          </Content>
         </Layout>
       </div>
     );

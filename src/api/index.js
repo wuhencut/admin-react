@@ -37,7 +37,6 @@ axios.interceptors.response.use(
       if (res.data.data == null) {
         res.data.data = {};
       }
-      console.log(res.config.url);
       requestArr.splice(requestArr.indexOf(res.config.url), 1);
       return res.data;
     }
@@ -58,7 +57,7 @@ let post = (path, data) => {
     user_id: userInfo.user_id ? userInfo.user_id : "",
     data: data,
   };
-  // console.log(url);
+  // (url);
   return axios.post(url, initReq(req));
 };
 export default {
