@@ -1,28 +1,24 @@
 // import { Component } from "react";
-import { Route } from "react-router-dom";
+import { Redirect, Route } from "react-router-dom";
 import React from "react";
 import getUserInfo from "../../api/getUserInfo";
-import Index from "../Index/Index";
-import Login from "../Login/Login";
-
+import routerConfig from "../routerConfig";
 class AuthRoute extends React.Component {
   render() {
     //  路由参数          路由地址
-    const { routerConfig, location } = this.props;
+    const { location } = this.props;
     const { pathname } = location; // 获取要去的路由地址
     const authed = getUserInfo().sid > 0 ? true : false;
     const targetRouterConfig = routerConfig.find((item) => {
+      console.log(item.path, pathname);
       return item.path === pathname;
     });
     if (!authed) {
-      window.location.href = "#/login";
       // 当index删除userInfo信息后自动调用了login组件，但是路由没有更换，所以需要加这么一行
-      return <Route to="/login" component={Login} />;
+      return <Redirect to="/login" />;
     } else {
       if (targetRouterConfig) {
         return <Route path={pathname} component={targetRouterConfig.component} />;
-      } else {
-        return <Route to="/" component={Index} />;
       }
     }
   }

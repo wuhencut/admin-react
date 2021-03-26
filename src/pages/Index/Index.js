@@ -92,7 +92,7 @@ class Index extends React.Component {
               </div>
               <div className={style.right}>
                 <Switch>
-                  <AuthRoute routerConfig={routerConfig}></AuthRoute>
+                  <AuthRoute></AuthRoute>
                 </Switch>
               </div>
             </div>
