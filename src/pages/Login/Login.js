@@ -12,6 +12,7 @@ class Login extends React.Component {
     val.password = md5(val.password);
     let res = await api.login(val);
   }
+
   render() {
     return (
       <div className="page">

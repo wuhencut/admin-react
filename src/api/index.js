@@ -5,9 +5,15 @@ import { message } from "antd";
 import getUserInfo from "./getUserInfo";
 import baseUrl from "./baseUrl";
 import initReq from "./initReq";
+let requestArr = [];
 axios.interceptors.request.use(
   (config) => {
-    return config;
+    if (requestArr.indexOf(config.url) < 0) {
+      requestArr.push(config.url);
+      return config;
+    } else {
+      return Promise.reject("请勿重复请求");
+    }
   },
   (error) => {
     message.error("请求超时");
@@ -31,7 +37,8 @@ axios.interceptors.response.use(
       if (res.data.data == null) {
         res.data.data = {};
       }
-
+      console.log(res.config.url);
+      requestArr.splice(requestArr.indexOf(res.config.url), 1);
       return res.data;
     }
   },
