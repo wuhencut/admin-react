@@ -1,4 +1,3 @@
-import Index from "../Index/Index";
 import Login from "../Login/Login";
 import CompanyAuth from "../CompanyAuth/index";
 import PersonalPool from "../PersonalPool/index";
