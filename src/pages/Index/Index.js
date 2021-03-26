@@ -1,8 +1,13 @@
 import React from "react";
-import "./Index.less";
+import style from "./Index.module.less";
 import api from "../../api/index";
+import logo from "../../assets/imgs/logo.png";
 import getUserInfo from "../../api/getUserInfo";
-import { message } from "antd";
+import { message, Layout, Popover, Button } from "antd";
+import AuthRoute from "../AuthRoute/AuthRoute";
+import { Link } from "react-router-dom";
+const { Header, Content } = Layout;
+let user = getUserInfo();
 class Index extends React.Component {
   constructor(props) {
     super(props);
@@ -12,7 +17,6 @@ class Index extends React.Component {
     this.getRoleInfo();
   }
   async getRoleInfo() {
-    let user = getUserInfo();
     if (user && user.role_id) {
       this.setState({ authed: true });
       let res = await api.queryRoleInfo({
@@ -29,7 +33,22 @@ class Index extends React.Component {
     }
   }
   render() {
-    return <div>Index</div>;
+    return (
+      <div className={style.page}>
+        <Layout>
+          <Header className={style.header}>
+            <div className={style.img}>
+              <img src={logo} alt="" />
+            </div>
+            <div className={style.img}>
+              <Popover trigger="click" content={<Link to="/login">退出登录</Link>}>
+                <Button>ClickMe</Button>
+              </Popover>
+            </div>
+          </Header>
+        </Layout>
+      </div>
+    );
   }
 }
 export default Index;

@@ -1,7 +1,7 @@
 import React from "react";
 import { Form, Input, Button, Layout, message } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
-import "./Login.less";
+import style from "./Login.module.less";
 import img1 from "../../assets/imgs/logo.png";
 import api from "../../api/index";
 import env from "../../api/env";
@@ -12,7 +12,7 @@ class Login extends React.Component {
   componentDidMount() {
     localStorage.clear();
   }
-  async onFinish(val) {
+  onFinish = async (val) => {
     val.password = md5(val.password);
     let res = await api.login(val);
     if (res.error_code === 0) {
@@ -36,22 +36,23 @@ class Login extends React.Component {
       // 保存用户信息
       localStorage.setItem("userInfo", JSON.stringify(userInfo));
       sessionStorage.setItem("auth", 1);
-      window.location.href = "#/index";
+      // window.location.href = "#/index";
+      this.props.history.push("/index");
     }
-  }
+  };
 
   render() {
     return (
-      <div className="page">
+      <div className={style.page}>
         <Layout>
-          <Header className="header">
-            <img className="img" src={img1} alt="" />
+          <Header className={style.header}>
+            <img className={style.img} src={img1} alt="" />
           </Header>
-          <Content className="content">
+          <Content className={style.content}>
             <Form
               name="normal_login"
               onFinish={this.onFinish}
-              className="login-form"
+              className={style["login-form"]}
               initialValues={{ email: "stone_locker@ingtube.com", password: "stone123" }}
             >
               <Form.Item

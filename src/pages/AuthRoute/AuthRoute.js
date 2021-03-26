@@ -15,6 +15,8 @@ class AuthRoute extends React.Component {
       return item.path === pathname;
     });
     if (!authed) {
+      window.location.href = "#/login";
+      // 当index删除userInfo信息后自动调用了login组件，但是路由没有更换，所以需要加这么一行
       return <Route to="/login" component={Login} />;
     } else {
       if (targetRouterConfig) {
