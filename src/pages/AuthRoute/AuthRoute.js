@@ -10,7 +10,6 @@ class AuthRoute extends React.Component {
     const { pathname } = location; // 获取要去的路由地址
     const authed = getUserInfo().sid > 0 ? true : false;
     const targetRouterConfig = routerConfig.find((item) => {
-      // console.log(item.path, pathname);
       return item.path === pathname;
     });
     if (!authed) {
@@ -18,7 +17,6 @@ class AuthRoute extends React.Component {
       return <Redirect to="/login" />;
     } else {
       if (targetRouterConfig) {
-        console.log(targetRouterConfig);
         return <Route path={pathname} component={targetRouterConfig.component} />;
       } else {
         return <Redirect to="/index" />;
