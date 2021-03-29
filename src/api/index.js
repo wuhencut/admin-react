@@ -30,7 +30,8 @@ axios.interceptors.response.use(
           typeof res.data.error_description !== "string" ? "系统错误" : res.data.error_description;
         message.error(error_description);
         if (res.data.error_code === 1002) {
-          window.location.href = "/login";
+          localStorage.clear();
+          window.location.href = "#/login";
         }
       }
 

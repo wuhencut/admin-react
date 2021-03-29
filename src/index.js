@@ -6,13 +6,14 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Index from "./pages/Index/Index";
 import Login from "./pages/Login/Login";
-import { HashRouter, Route } from "react-router-dom";
+import { HashRouter, Redirect, Route } from "react-router-dom";
 import "antd/dist/antd.css";
 
 ReactDOM.render(
   <HashRouter>
     <Route path="/login" component={Login}></Route>
     <Route path="/" component={Index}></Route>
+    {/* <Redirect ro="/" /> */}
   </HashRouter>,
   document.getElementById("root")
 );
