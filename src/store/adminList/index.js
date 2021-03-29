@@ -5,10 +5,10 @@ export const adminListSlice = createSlice({
     value: [],
   },
   reducers: {
-    getAdminList: (state, action) => {
+    AdminList: (state, action) => {
       state.value = action.payload;
     },
   },
 });
-export const { getAdminList } = adminListSlice.actions;
+export const { AdminList } = adminListSlice.actions;
 export default adminListSlice.reducer;
