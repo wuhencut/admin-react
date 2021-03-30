@@ -19,7 +19,7 @@ export default function CompanyAuth() {
   };
 
   const handleChange = (val) => {
-    console.log(val);
+    console.log(`这是子组件传上来的事件值${val}`);
   };
   async function queryList() {
     let res = await api.getBusinessLicenseList(state.search);

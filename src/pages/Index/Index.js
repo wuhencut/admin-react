@@ -43,7 +43,6 @@ class Index extends React.Component {
   constructor(props) {
     super(props);
     this.state = { roleList: [], authed: false };
-    console.log(props);
   }
   componentDidMount() {
     // 获取角色权限信息渲染tab导航栏
