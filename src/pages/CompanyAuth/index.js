@@ -12,28 +12,23 @@ const { Column } = Table;
 export default function CompanyAuth() {
   // const dispatch = useDispatch();
   const [list, setList] = useState([]);
+  const [search, setSearch] = useState({
+    page_id: 1,
+    page_size: 10,
+    company_verify_status: "waiting",
+    company_name: "",
+    bd_admin_id: "",
+  });
   const [total, setTotal] = useState(0);
   const allAdmin = useSelector((state) => state.adminList.allAdmin);
-  const state = {
-    search: {
-      page_id: 1,
-      page_size: 10,
-      company_verify_status: "",
-      bd_admin_id: "",
-      company_name: "",
-    },
-  };
-  // 搜索按钮提交
-  const onFinish = (val) => {
-    console.log(val);
-  };
   // BD变化触发搜索
   const handleBdChange = (val) => {
-    state.search.bd_admin_id = val;
+    search.bd_admin_id = val;
+    console.log(search);
     searchBtnClick();
   };
   const handleStatusChange = (val) => {
-    state.company_verify_status = val;
+    search.company_verify_status = val;
     searchBtnClick();
   };
   // 查看按钮
@@ -41,27 +36,37 @@ export default function CompanyAuth() {
     console.log(val);
   };
   async function queryList() {
-    let res = await api.getBusinessLicenseList(initReq(state.search));
+    let res = await api.getBusinessLicenseList(initReq(search));
     if (res.error_code === 0) {
       setList(res.data.sponsor_user);
       setTotal(res.data.count);
     }
   }
   const searchBtnClick = () => {
-    state.search.page_id = 1;
+    search.page_id = 1;
+    console.log(search);
     queryList();
+  };
+  const inputChange = (val) => {
+    search.company_name = val.target.value;
+  };
+  const tableChange = (val) => {
+    search.page_id = val.current;
+    queryList();
+    // searchBtnClick();
   };
   useEffect(() => {
     queryList();
   }, []);
   return (
     <div className="page">
-      <Form layout="inline" onFinish={onFinish} initialValues={{ company_verify_status: "waiting", company_name: "" }}>
+      <Form layout="inline" initialValues={{ company_verify_status: search.company_verify_status, company_name: "" }}>
         <Form.Item name="company_name">
-          <Input placeholder="企业名称" onPressEnter={searchBtnClick}></Input>
+          <Input placeholder="企业名称" onChange={inputChange} onPressEnter={searchBtnClick}></Input>
         </Form.Item>
         <Form.Item name="company_verify_status">
           <Select style={{ width: "120px" }} onChange={handleStatusChange}>
+            <Option value="">认证状态</Option>
             <Option value="waiting">待审核</Option>
             <Option value="refuse">已拒绝</Option>
             <Option value="approve">已通过</Option>
@@ -70,7 +75,13 @@ export default function CompanyAuth() {
         <BdSelect onChange={handleBdChange} value=""></BdSelect>
       </Form>
 
-      <Table style={{ marginTop: "20px" }} dataSource={list} rowKey="sponsor_id">
+      <Table
+        onChange={tableChange}
+        pagination={{ current: search.page_id, total: total, showSizeChanger: false, showQuickJumper: true }}
+        style={{ marginTop: "20px" }}
+        dataSource={list}
+        rowKey="sponsor_id"
+      >
         <Column title="企业名称" dataIndex="company_name" key="company_name"></Column>
         <Column
           title="申请时间"
