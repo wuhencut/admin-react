@@ -1,12 +1,19 @@
 import { Form, Input, Button, Select } from "antd";
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { AdminList } from "../../store/adminList/index";
+import BdSelect from "../../Component/BbSelect/index";
 import api from "../../api/index";
 
 const { Option } = Select;
 export default function CompanyAuth() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
+  const state = {
+    search: {
+      page_id: 1,
+      page_size: 20,
+    },
+    list: [],
+    total: 100,
+  };
   const onFinish = (val) => {
     console(val);
   };
@@ -14,15 +21,16 @@ export default function CompanyAuth() {
   const handleChange = (val) => {
     console.log(val);
   };
-  useEffect(() => {
-    getAdmin();
-  });
-  const getAdmin = async () => {
-    let res = await api.listAdmin({});
+  async function queryList() {
+    let res = await api.getBusinessLicenseList(state.search);
     if (res.error_code === 0) {
-      dispatch(AdminList(res.data));
+      state.list = res.data.sponsor_user || [];
+      state.total = res.data.count || 0;
     }
-  };
+  }
+  useEffect(() => {
+    queryList();
+  }, []);
   return (
     <div className="page">
       <Form layout="inline" onFinish={onFinish} initialValues={{ company_verify_status: "waiting", company_name: "" }}>
@@ -36,6 +44,7 @@ export default function CompanyAuth() {
             <Option value="approve">已通过</Option>
           </Select>
         </Form.Item>
+        <BdSelect onChange={handleChange} value=""></BdSelect>
       </Form>
     </div>
   );

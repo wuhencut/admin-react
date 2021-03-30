@@ -4,10 +4,12 @@ import api from "../../api/index";
 import logo from "../../assets/imgs/logo.png";
 import getUserInfo from "../../api/getUserInfo";
 import { message, Layout, Popover, Menu } from "antd";
-// import AuthRoute from "../AuthRoute/AuthRoute";
 import authList from "../../authList.json";
 import { Link, Switch } from "react-router-dom";
 import AuthRoute from "../AuthRoute/AuthRoute";
+import { AdminList } from "../../store/adminList/index";
+import { connect } from "react-redux";
+
 const { Header, Content } = Layout;
 const { SubMenu } = Menu;
 let user = getUserInfo();
@@ -41,9 +43,19 @@ class Index extends React.Component {
   constructor(props) {
     super(props);
     this.state = { roleList: [], authed: false };
+    console.log(props);
   }
   componentDidMount() {
+    // 获取角色权限信息渲染tab导航栏
     this.getRoleInfo();
+    // 获取所有用户信息 用于dispatch给BdSelect组件和AdminSelect组件
+    this.getAdminList();
+  }
+  async getAdminList() {
+    let res = await api.listAdmin({});
+    if (res.error_code === 0) {
+      this.props.dispatchAdminList(res.data.users);
+    }
   }
   async getRoleInfo() {
     if (user && user.role_id) {
@@ -101,4 +113,16 @@ class Index extends React.Component {
     );
   }
 }
-export default Index;
+const mapStateToProps = (state) => {
+  return {
+    store: state,
+  };
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    dispatchAdminList: (data) => {
+      dispatch(AdminList(data));
+    },
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Index);
