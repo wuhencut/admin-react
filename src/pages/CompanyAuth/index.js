@@ -80,7 +80,6 @@ export default function CompanyAuth() {
         pagination={{ current: search.page_id, total: total, showSizeChanger: false, showQuickJumper: true }}
         style={{ marginTop: "20px" }}
         dataSource={list}
-        rowKey="sponsor_id"
       >
         <Column title="企业名称" dataIndex="company_name" key="company_name"></Column>
         <Column
