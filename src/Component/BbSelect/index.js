@@ -2,7 +2,7 @@
 /* eslint-disable array-callback-return */
 /* eslint-disable eqeqeq */
 import { Select } from "antd";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 
 const { Option } = Select;
@@ -14,12 +14,12 @@ export default function BdSelect(props) {
   //   isNew: Boolean, // 兼容新老版本
   //   disabled: Boolean
   // },
-  const adminList = useSelector((state) => state.adminList);
+  const adminList = useSelector((state) => state.adminList.value);
   let list;
 
   const salesmanList = () => {
     let salesmanList = [];
-    adminList.value.map((item) => {
+    adminList.map((item) => {
       if (
         (item.admin_role == "销售" || item.admin_role == "销售主管" || item.admin_role == "销售组长") &&
         item.status == 1
