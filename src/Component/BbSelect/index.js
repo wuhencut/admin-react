@@ -7,14 +7,7 @@ import { useSelector } from "react-redux";
 
 const { Option } = Select;
 
-export default function BdSelect(
-  props = {
-    value: "",
-    isAll: true,
-    isNew: true,
-    disabled: false,
-  }
-) {
+export default function BdSelect(props) {
   //   props: {
   //   value: String,
   //   isAll: Boolean,
@@ -52,8 +45,8 @@ export default function BdSelect(
   };
   return (
     <div className="page">
-      <Select style={{ width: "120px" }} defaultValue={props.value} onChange={handleChange}>
-        props.isAll ? <Option value={props.value}>BD负责人</Option> : null
+      <Select placeholder="请选择BD" style={{ width: "120px" }} defaultValue={props.value} onChange={handleChange}>
+        {props.isAll == false ? null : <Option value="">BD负责人</Option>}
         {list}
       </Select>
     </div>

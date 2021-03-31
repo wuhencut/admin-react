@@ -61,8 +61,8 @@ export default function AdminSelect(props) {
   };
   return (
     <div className="page">
-      <Select style={{ width: "120px" }} defaultValue={props.value} onChange={handleChange}>
-        props.isAll ? <Option value={props.value}>运营负责人</Option> : null
+      <Select placeholder="请选择运营" style={{ width: "120px" }} defaultValue={props.value} onChange={handleChange}>
+        {props.isAll == false ? null : <Option value="">所有运营</Option>}
         {list}
       </Select>
     </div>
