@@ -7,7 +7,14 @@ import { useSelector } from "react-redux";
 
 const { Option } = Select;
 
-export default function BdSelect(props) {
+export default function BdSelect(
+  props = {
+    value: "",
+    isAll: true,
+    isNew: true,
+    disabled: false,
+  }
+) {
   //   props: {
   //   value: String,
   //   isAll: Boolean,

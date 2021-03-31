@@ -1,6 +1,7 @@
 import Login from "../Login/Login";
 import CompanyAuth from "../CompanyAuth/index";
 import PersonalPool from "../PersonalPool/index";
+import BrandAuth from "../BrandAuth/index";
 let routes = [
   {
     path: "/login",
@@ -16,6 +17,10 @@ let routes = [
     path: "/personalPool",
     name: "personalPool",
     component: PersonalPool,
+  },
+  {
+    path: "/brandAuth",
+    component: BrandAuth,
   },
 ];
 export default routes;

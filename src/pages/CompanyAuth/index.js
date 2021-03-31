@@ -24,7 +24,6 @@ export default function CompanyAuth() {
   // BD变化触发搜索
   const handleBdChange = (val) => {
     search.bd_admin_id = val;
-    console.log(search);
     searchBtnClick();
   };
   const handleStatusChange = (val) => {
@@ -44,7 +43,6 @@ export default function CompanyAuth() {
   }
   const searchBtnClick = () => {
     search.page_id = 1;
-    console.log(search);
     queryList();
   };
   const inputChange = (val) => {
@@ -80,6 +78,7 @@ export default function CompanyAuth() {
         pagination={{ current: search.page_id, total: total, showSizeChanger: false, showQuickJumper: true }}
         style={{ marginTop: "20px" }}
         dataSource={list}
+        rowKey="sponsor_id"
       >
         <Column title="企业名称" dataIndex="company_name" key="company_name"></Column>
         <Column
