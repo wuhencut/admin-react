@@ -25,7 +25,7 @@ export default function CpAlly() {
   const [list, setList] = useState([]);
   const [total, setTotal] = useState(100);
   const [liablerList, setLiablerList] = useState([]);
-  const statucChange = (val) => {
+  const statusChange = (val) => {
     search.apply_status = val;
     searchBtnClick();
   };
@@ -73,7 +73,7 @@ export default function CpAlly() {
     <div className="page">
       <Form layout="inline">
         <Item>
-          <Select style={{ width: "120px" }} onChange={statucChange} defaultValue={search.apply_status}>
+          <Select style={{ width: "120px" }} onChange={statusChange} defaultValue={search.apply_status}>
             <Option value={-1}>全部</Option>
             <Option value={0}>待审核</Option>
             <Option value={1}>已通过</Option>

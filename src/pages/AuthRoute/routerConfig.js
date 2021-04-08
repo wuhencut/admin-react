@@ -3,6 +3,7 @@ import CompanyAuth from "../CompanyAuth/index";
 import PersonalPool from "../PersonalPool/index";
 import BrandAuth from "../BrandAuth/index";
 import CpApply from "../CpApply/index";
+import UserList from "../UserList/index";
 let routes = [
   {
     path: "/login",
@@ -26,6 +27,10 @@ let routes = [
   {
     path: "/cpApply",
     component: CpApply,
+  },
+  {
+    path: "/registeCpList",
+    component: UserList,
   },
 ];
 export default routes;

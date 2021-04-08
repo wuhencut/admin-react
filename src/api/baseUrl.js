@@ -32,8 +32,8 @@ if (env === "master") {
 
     default:
       baseUrl = [
-        "http://dev.admin.test.collectivedynamic.com:30000",
-        "http://dev.passport.test.collectivedynamic.com:30000",
+        "http://dev2.admin.test.collectivedynamic.com:30000",
+        "http://dev2.passport.test.collectivedynamic.com:30000",
       ];
       break;
   }
