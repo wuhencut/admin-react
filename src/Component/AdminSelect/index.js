@@ -1,10 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable array-callback-return */
 /* eslint-disable eqeqeq */
-import { Select } from "antd";
 import React from "react";
 import { useSelector } from "react-redux";
-
+import { Select } from "antd";
 const { Option } = Select;
 
 export default function AdminSelect(props) {
