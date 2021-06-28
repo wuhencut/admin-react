@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
-import { Input, Space, Modal, DatePicker } from "antd";
+import { Input, Space, Modal, DatePicker, Select } from "antd";
 import "./index.less";
 
+const { Option } = Select;
 const { RangePicker } = DatePicker;
 const PersonalPool = () => {
   const [showMd, setShowMd] = useState(false);
@@ -15,6 +16,11 @@ const PersonalPool = () => {
   }, []);
   return (
     <div className="page">
+      <Select mode="multiple" style={{ width: 200 }} placeholder="Select 1 person">
+        <Option value="jack">jack</Option>
+        <Option value="aack">aack</Option>
+        <Option value="back">back</Option>
+      </Select>
       <RangePicker
         onChange={(v) => {
           console.log(v);
