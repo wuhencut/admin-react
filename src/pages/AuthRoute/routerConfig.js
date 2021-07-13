@@ -4,6 +4,7 @@ import PersonalPool from "../PersonalPool/index";
 import BrandAuth from "../BrandAuth/index";
 import CpApply from "../CpApply/index";
 import UserList from "../UserList/index";
+import PublicPool from "../PublicPool/index";
 let routes = [
   {
     path: "/login",
@@ -31,6 +32,10 @@ let routes = [
   {
     path: "/registeCpList",
     component: UserList,
+  },
+  {
+    path: "/publicPool",
+    component: PublicPool,
   },
 ];
 export default routes;

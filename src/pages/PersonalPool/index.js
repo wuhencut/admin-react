@@ -1,45 +1,38 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
-import { Input, Space, Modal, DatePicker, Select } from "antd";
+import { Tree } from "antd";
+import treeData from "./tree.json";
 import "./index.less";
 
-const { Option } = Select;
-const { RangePicker } = DatePicker;
-const PersonalPool = () => {
-  const [showMd, setShowMd] = useState(false);
-  const [score, setScore] = useState("");
-  const focus = () => {
-    setShowMd(true);
-  };
-  useEffect(() => {
-    console.log(moment().endOf("day"));
-  }, []);
+const mapObj = (item) => {
+  if (!item.documentDOList) {
+    return { key: item.directoryShowName, title: item.directoryShowName, children: [mapObj(item.documentResultVO)] };
+  } else {
+    return {
+      key: item.directoryShowName,
+      title: item.directoryShowName,
+      children: item.documentDOList.map((i) => {
+        return {
+          ...i,
+          key: i.id,
+          title: i.showName,
+        };
+      }),
+    };
+  }
+};
+// 把tree 类型的转传承 mapObj类型的格式
+const genTree = (data) => {
+  const list = data.map((item) => {
+    return mapObj(item);
+  });
+  return list;
+};
+
+export default function PersonalPool() {
   return (
     <div className="page">
-      <Select mode="multiple" style={{ width: 200 }} placeholder="Select 1 person">
-        <Option value="jack">jack</Option>
-        <Option value="aack">aack</Option>
-        <Option value="back">back</Option>
-      </Select>
-      <RangePicker
-        onChange={(v) => {
-          console.log(v);
-        }}
-      ></RangePicker>
-      <Input.Search
-        value={score}
-        enterButton={<div>评分</div>}
-        onClick={focus}
-        placeholder="placeholder"
-      ></Input.Search>
-      <Modal
-        visible={showMd}
-        onCancel={() => {
-          setShowMd(false);
-        }}
-        title="test"
-      ></Modal>
+      <Tree treeData={genTree(treeData)}></Tree>
     </div>
   );
-};
-export default PersonalPool;
+}
