@@ -30,9 +30,21 @@ const genTree = (data) => {
 };
 
 export default function PersonalPool() {
+  const [documentData, setdocumentData] = useState({});
+
+  const treeSelect = (keys, event) => {
+    if (keys.length && event.node && event.node.viewJson) {
+      setdocumentData(JSON.parse(event.node.viewJson));
+    }
+  };
+
+  useEffect(() => {
+    console.log(documentData);
+  }, [documentData]);
+
   return (
     <div className="page">
-      <Tree treeData={genTree(treeData)}></Tree>
+      <Tree defaultExpandAll onSelect={treeSelect} treeData={genTree(treeData)}></Tree>
     </div>
   );
 }
